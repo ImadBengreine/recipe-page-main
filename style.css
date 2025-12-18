@@ -1,0 +1,225 @@
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Stone-100: hsl(30, 54%, 90%);
+    --Stone-150: hsl(30, 18%, 87%);
+    --Stone-600: hsl(30, 10%, 34%);
+    --Stone-900: hsl(24, 5%, 18%);
+    --Brown-800: hsl(14, 45%, 36%);
+    --Rose-800: hsl(332, 51%, 32%);
+    --Rose-50: hsl(330, 100%, 98%);
+    --font-young-serif: 'Young Serif', serif;
+    --font-outfit: 'Outfit', sans-serif;
+    --font-Size: 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-outfit);
+    background-color: var(--Stone-100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5;
+    font-size: var(--font-Size);
+}
+
+h1, h2 {
+    font-family: var(--font-young-serif);
+}
+
+.recipe {
+    max-width: 45rem;
+    padding: 3.5rem;
+    background-color: var(--White);
+    margin: 1.5rem;
+    border-radius: 1.5rem;
+    color: var(--Stone-600);
+}
+
+.recipe-hero {
+    width: 100%;
+    height: 25rem; 
+    overflow: hidden;
+    position: relative;
+}
+
+.recipe-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops image to fill container while maintaining aspect ratio */
+    display: block;
+    border-radius: 1rem; 
+}
+
+.recipe-content {
+    margin-top: 2rem;
+}
+
+.recipe-content h1 {
+	font-size: 2.5rem;
+	color: var(--Stone-900);
+	font-weight: 400;
+	margin-bottom: 1rem;
+}
+
+.preparation-time {
+	padding: 1.5rem;
+	margin: 1.7rem 0 ;
+	background-color: var(--Stone-100);
+	border-radius: 0.7rem;
+}
+
+.preparation-time h3 {
+	color: var(--Rose-800);
+	font-size: 1.4rem;
+	font-family: var(--font-outfit);
+	font-weight: 600;
+}
+
+.preparation-time ul {
+	padding: 0.5rem 1.9rem;
+	color: var(--Stone-600);
+}
+
+ul li,
+ol li {
+    margin-bottom: 0.5rem; /* Adjust the value as needed */
+}
+
+ol {
+    counter-reset: list; /* Reset the counter */
+    list-style: none; /* Remove the default list style */
+    padding-left: 0; /* Remove the default padding */
+}
+
+ol li {
+    counter-increment: list; /* Increment the counter */
+    position: relative; /* Position relative to the list item */
+    padding-left: 2em; /* Add padding to make space for the number */
+}
+
+ol li::before {
+    content: counter(list) ". "; /* Use the counter as the content */
+    font-weight: bold; /* Make the number bold */
+    position: absolute; /* Position absolute within the list item */
+    left: 0; /* Align the number to the left */
+}
+
+.make-bold {
+    font-weight: bold; /* Make the text bold */
+}
+
+
+.ingredients ul {
+	padding: 0.3rem 2rem;
+	margin-bottom: 1.4rem;
+}
+
+hr {
+    display: block;
+    color: gray;
+    overflow: hidden;
+    margin-bottom: 1.7rem;
+    border-style: inset;
+    border-width: 1px;
+}
+
+
+.insructions  ol {
+	padding: 0.3rem 2rem;
+	margin-bottom: 1.4rem;
+}
+
+.h-section {
+	color: var(--Brown-800);
+	font-size: 2rem;
+	font-weight: 400;
+	margin-bottom: 1.3rem;
+}
+
+.nutrition p {
+    margin-bottom: 1rem; 
+}
+
+.nutrition table {
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-left: 1.2rem;
+}
+
+.nutrition td {
+    padding: 0.5rem; 
+    border-bottom: 2px solid var(--Stone-150);
+    font-weight: normal; 
+    color: var(--Stone-600); 
+}
+
+.nutrition td:nth-child(2) {
+    font-weight: bold; 
+    color: var(--Brown-800); 
+}
+
+.nutrition tr:last-child td {
+    border-bottom: none; /* Remove border from the last row */
+}
+
+
+@media (max-width: 375px) {
+    .recipe {
+        padding: 1rem;
+        max-width: 100%;
+    }
+
+    .recipe-hero {
+        height: 18rem;
+    }
+
+    .recipe-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .preparation-time h3 {
+        font-size: 1.1rem;
+    }
+
+    .nutrition td {
+        font-size: 0.9rem;
+    }
+}
+
+
+@media (min-width: 376px) and (max-width: 1439px) {
+    .recipe {
+        padding: 1.5rem;
+        max-width: 40rem;
+    }
+
+    .recipe-hero {
+        height: 22rem;
+    }
+
+    .recipe-content h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/
+@media (min-width: 1440px) {
+    .recipe {
+        padding: 2rem;
+        max-width: 44rem;
+    }
+
+    .recipe-hero {
+        height: 26rem;
+    }
+
+    .recipe-content h1 {
+        font-size: 2.6rem;
+    }
+}
